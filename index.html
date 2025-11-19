@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Buscador de Expresiones Regulares</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <h1>Buscador de Expresiones Regulares</h1>
+
+    <section class="controls">
+      <label>
+        Expresión regular:
+        <input id="patternInput" placeholder="/abc/i o abc" />
+      </label>
+
+      <label>
+        Flags (opcional):
+        <input id="flagsInput" placeholder="g, i, m, s, u, y" />
+      </label>
+
+      <div class="buttons">
+        <button id="testBtn">Probar</button>
+        <button id="clearBtn" class="secondary">Limpiar</button>
+      </div>
+
+      <p id="error" class="error"></p>
+    </section>
+
+    <section class="input-area">
+      <label>
+        Texto a buscar:
+        <textarea id="textInput" rows="10" placeholder="Pega aquí el texto..."></textarea>
+      </label>
+    </section>
+
+    <section class="results">
+      <div class="summary">
+        <div>Coincidencias encontradas: <strong id="count">0</strong></div>
+        <div>
+          Lista de coincidencias:
+          <pre id="matchesList">[]</pre>
+        </div>
+      </div>
+
+      <h2>Vista con resaltado</h2>
+      <div id="preview" class="preview"></div>
+    </section>
+
+    <footer class="foot">
+      Puedes escribir la expresión como <code>/patrón/flags</code> o solo el patrón.
+    </footer>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
